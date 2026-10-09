@@ -1,0 +1,317 @@
+button.xaop_primary_cta {
+    height: 40px;
+}
+
+.xaop_primary_cta {
+    /* background-color: #f09254;   */
+    background: var(--gradients-tangerine, linear-gradient(97deg, #ff6700 5.56%, #fe8e0c 94.44%));
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    width: 335px;
+    height: 40px;
+    transition-property: all;
+    transition-delay: 1ms;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.xaop_primary_cta:hover,
+.xaop_primary_cta:focus {
+    background: linear-gradient(0deg, rgba(251, 23, 23, 0.2) 0%, rgba(251, 23, 23, 0.2) 100%), linear-gradient(96deg, #ff6700 -35.9%, #fe8e0c 107.31%);
+}
+
+.xaop_primary_cta:active {
+    background: linear-gradient(96.33deg, #ff6700 -35.9%, #fe8e0c 107.31%);
+}
+
+
+
+// ######   IMPORTANT TO READ #########
+// To use the below xaop mat mdc classes , create a id in your main component div and add it here using a comma, if any update is required for xaop file , include all module owners as this can impact other modules
+
+// angular mdc material custom classes
+
+#sce_v1_main_div_id_xaop,
+.sce_custom_dialog_class,
+.xaop_v1_experian_panel_class {
+
+    // mat form field & mat-input
+    .mat-mdc-form-field {
+        .mat-mdc-text-field-wrapper {
+            &.mdc-text-field--disabled .mat-mdc-form-field-flex {
+
+                .mdc-notched-outline__leading,
+                .mdc-notched-outline__trailing,
+                .mdc-notched-outline__notch {
+                    border-color: #CCCCCC;
+                    border-width: 1px;
+                }
+            }
+
+            .mat-mdc-form-field-flex {
+                padding: 0px 12px 0px 12px !important;
+                background-color: #FFF;
+
+                .mat-mdc-form-field-infix {
+                    display: flex;
+                    height: 44px;
+                    align-items: center;
+
+                    .mat-mdc-input-element::placeholder {
+                        font-family: 'Rubik-Regular' !important;
+                        color: #666666 !important;
+                        font-size: 13px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        text-align: left;
+                    }
+
+                    .mat-mdc-input-element {
+                        font-family: 'Rubik-Regular';
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        text-align: left;
+                        color: #1A1A1A;
+                        caret-color: #72ACF2;
+                    }
+                }
+            }
+
+            &.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused) .mdc-notched-outline {
+
+                .mdc-notched-outline__leading,
+                .mdc-notched-outline__trailing,
+                .mdc-notched-outline__notch {
+                    border-color: #b40000;
+                    border-width: 1px;
+                }
+            }
+        }
+
+        .mat-mdc-form-field-subscript-wrapper {
+            .mat-mdc-form-field-error-wrapper {
+                padding: 5px 0px 0px 0px !important;
+                display: flex;
+
+                .mat-mdc-form-field-error {
+                    font-size: 12px !important;
+                    color: #b40000;
+                    display: flex;
+                }
+            }
+        }
+
+        &.mat-form-field-invalid {
+            margin: unset;
+        }
+
+        &.mat-focused {
+            .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex {
+                background: #F0F8FF;
+                box-shadow: 0px 0px 0px 2px #AEDDFF;
+                border-radius: 4px;
+
+            }
+
+            .mdc-text-field--outlined:not(.mdc-text-field--invalid) .mdc-notched-outline {
+
+                .mdc-notched-outline__leading,
+                .mdc-notched-outline__trailing,
+                .mdc-notched-outline__notch {
+                    border-color: #999999;
+                    border-width: 1px;
+                }
+            }
+        }
+    }
+
+}
+
+// steps component css
+.xaop_det_what_next {
+    background-color: #FFFFFF;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h4 {
+        font-family: 'Rubik-Medium';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #000000;
+
+        span {
+            font-family: 'Rubik-Medium';
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.59px;
+            text-align: left;
+            color: #FF6700;
+            white-space: nowrap;
+        }
+    }
+
+    .xaop_det_vertical_tracker {
+        display: flex;
+        flex-direction: column;
+
+        .xaop_det_data_point {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            position: relative;
+            gap: 10px;
+
+            .xaop_det_circle_badge {
+                width: 21px;
+                height: 21px;
+                border-radius: 25px;
+                background: #2680EB;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 9px;
+                margin-top: 6px;
+
+                .xaop_det_numDatafont {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: 'Rubik-Medium';
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .xaop_det_circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #2680eb;
+            /* margin-right: 5px; */
+            position: relative;
+            padding: 14px;
+            z-index: 10000;
+        }
+
+        .xaop_det_circle p {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+        }
+
+        .xaop_det_dot {
+            position: absolute;
+            left: 10px;
+            top: 26px;
+            height: 100%;
+            width: 1px;
+            // z-index: 10;
+            transform: rotate(180deg);
+            border-left: 2px dotted #8ab7ed;
+        }
+
+        .xaop_det_data_lines {
+            display: flex;
+            flex-direction: column;
+
+            .xaop_det_title {
+                font-family: 'Rubik-Medium';
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 17px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #000000;
+            }
+
+            .xaop_det_desc {
+                font-family: 'Rubik-Regular';
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #1a1a1a;
+            }
+
+            .xaop_det_data_line {
+                margin-top: 2px;
+            }
+
+            // .gl_det_seeClick {
+            //     font-family: 'Rubik-Medium';
+            //     color: #FF6700;
+            // }
+        }
+    }
+}
+
+// loader screen css
+.xaop_pod_loader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: #ffffff;
+
+    h3 {
+        font-family: 'Rubik-Medium';
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #002953;
+    }
+
+    div {
+        .spinner {
+            width: 109px;
+            padding: 5px;
+            background: #FF6700;
+
+            aspect-ratio: 1;
+            border-radius: 50%;
+            --_m:
+                conic-gradient(#0000, #000),
+                linear-gradient(#000 0 0) content-box;
+            -webkit-mask: var(--_m);
+            mask: var(--_m);
+            -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+            box-sizing: border-box;
+            animation: load 1s linear infinite;
+        }
+
+        @keyframes load {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+    }
+
+    p {
+        font-family: 'Rubik-Regular';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #1a1a1a;
+    }
+}

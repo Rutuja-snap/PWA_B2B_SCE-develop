@@ -1,0 +1,89 @@
+<div class="aa_experian_main_con">
+    <div class="aa_cross_wrap">
+        <div>
+            <img class="aa_cross_img"
+                src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/cross.svg"
+                (click)="closeExpansion('CLOSE')" alt="">
+        </div>
+        <div class="aa_title">{{aemData?.['select-an-option-wrapper']['form-heading']}}</div>
+    </div>
+    <div class="aa_details_section">
+        <div [ngClass]="{'red_border': ctaErrormssg && selectedValue !== 'autofetch', 
+            'radio_button_checked' : selectedValue == 'autofetch'}" class="aa_autofill_section">
+            <mat-radio-button (change)="onChange('autofetch')" [checked]="(selectedValue === 'autofetch')"></mat-radio-button>
+            <div class="aa_autofill_container">
+                <div class="aa_autofill_container_content">
+                    <div class="aa_autofill_header_section">
+                        <div class="aa_autofill_header_section_heading">{{aemData?.['select-an-option-wrapper']['fields'][0]['field-label-main']}}</div>
+                        <span class="aa_autofill_header_section_faster">
+                            <img class=""
+                             src="https://bflcodepush.bajajfinserv.in/bflfiles/assets/img/flash.svg" alt="">
+                            {{ 'b2b_sce.b2b_experian_popup.faster' | translate}}</span>
+                    </div>
+                    <div class="aa_autofill_desc_section">
+                        {{aemData?.['select-an-option-wrapper']['fields'][0]['field-description']}}
+                    </div>
+                </div>
+                <div class="aa_pd_box_fields" *ngIf="selectedValue === 'autofetch'">
+                    <div class="aa_xaop_dcx_input">
+                        <mat-label class="aa_mat_label">{{aemData?.['select-an-option-wrapper']['fields'][1]['title']}}
+                        </mat-label>
+                        <mat-form-field class="aa_field_full_width" hideRequiredMarker="true" appearance="outline">
+                            <input matInput type="text"
+                                placeholder="Enter full name" [formControl]="fullname"
+                                [appInputValidation]="'alpha'" maxlength="50" autocomplete="off">
+                            <span *ngIf="fullname.value !== ''" class="aa_field_input_cross"
+                                (mousedown)="eraseField('fullname',$event)"></span>
+                            <mat-error *ngIf="fullname.hasError('required')">
+                                <div>
+                                    <img class="aa_emptype_box_selection_error_icon"
+                                        src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg" alt="">
+                                    {{ 'b2b_sce.b2b_experian_popup.fullNameErrMsg' | translate}}
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div @slideInOut *ngIf="seeMore" [ngClass]="{'apply_margin': fullname.hasError('required') && fullname.touched}" class="aa_seemore_section">
+                    <div class="aa_seemore_content">
+                        <div class="aa_seemore_content_title">{{aemData?.['select-an-option-wrapper']['fields'][2]['title']}}</div>
+                        <div class="aa_seemore_content_desc">{{aemData?.['select-an-option-wrapper']['fields'][2]['description']}}</div>
+                    </div>
+                    <div class="aa_seemore_guratee_section">
+                        <div class="aa_seemore_guratee_section_image">
+                            <img class="shield_image" [src]="aemData?.['select-an-option-wrapper']['fields'][3]['iconimage-android']" alt="loadng image">
+                        </div>
+                        <div class="aa_seemore_guratee_section_desc">{{aemData?.['select-an-option-wrapper']['fields'][3]['icontitle']}}</div>
+                    </div>
+                </div>
+                <div class="aa_more_less_div">
+                    <span tabindex="0" role="button" (click)="setExpanded()" (keydown)="handleKeydown($event)" aria-label="Expand/collapse">{{toggle_label}}
+                        <img class="aa_arrow_exp" *ngIf="!seeMore"
+                            src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/dropdown.svg"
+                            alt="down-arrow" />
+                        <img class="aa_arrow_exp" *ngIf="seeMore"
+                            src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/up_arrow.svg"
+                            alt="up_arrow" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="{'red_border': ctaErrormssg && selectedValue !== 'manually',
+             'radio_button_checked' : selectedValue == 'manually'}" class="aa_manually_detail_section">
+                <mat-radio-button (change)="onChange('manually')" [checked]="(selectedValue === 'manually')"></mat-radio-button>
+            <div class="aa_autofill_header_section_heading">
+                {{aemData?.['select-an-option-wrapper']['fields'][5]['title']}}
+            </div>
+        </div>
+    </div>
+    <div class="aa_continue_btn_wrap">
+        <mat-error *ngIf="ctaErrormssg">
+            <img class="aa_emptype_box_selection_error_icon"
+            src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg" alt="">
+            {{ ctaErrormssg | translate}}</mat-error>
+        <button class="aa_primary_cta"
+            (click)="continueClicked()">{{aemData?.['continue-btn']['multi-cta-set'][0]['ctaLabel']}}</button>
+    </div>
+ 
+</div>
+ 

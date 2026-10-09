@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//   faq
+.main_faq {
+    padding: 12px 16px 12px 16px;
+    background: #ffff;
+    position: relative;
+
+    .custom_height {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        overflow-y: hidden;
+        transition: max-height 0.3s;
+        height: 100%;
+
+        .heading_faq {
+            font-family: 'Rubik-Medium';
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            letter-spacing: 0px;
+            margin: 0px;
+        }
+
+        .faq_accordian {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info_bullets {
+            padding: 8px 12px;
+            box-shadow: none;
+            gap: 8px;
+            ul.info {
+                padding-left: 20px;
+
+                li {
+                    list-style-type: disc !important;
+                }
+            }
+
+            // xaem version 
+            ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body .xaem {
+                p a {
+                    pointer-events: none;
+                }
+                .xaem_raw p {
+                        /* Styles for paragraphs */
+                        font-family: 'Rubik-Regular';
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        letter-spacing: 0em;
+                        color: #1A1A1A;
+                        margin: 0px;
+                    }
+                
+                    .xaem_raw ul,
+                    .xaem_raw ol {
+                        padding-left: 20px;
+                    }
+                
+                    .xaem_raw ul li {
+                        /* Styles for list items */
+                        list-style-type: disc !important;
+                    }
+                
+                    .xaem_raw ol li {
+                        /* Styles for list items */
+                        // list-style-type: decimal !important;
+                    }
+                    .xaem_raw p a[href] {
+                        text-decoration: none;
+                        color: #FF6700;
+                        cursor: pointer;
+                        font-family: Rubik-regular;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        
+                    }
+                    .xaem_raw p a:not([href]) a[href=""]{
+                        pointer-events: none;
+                        color: inherit !important; /* Change color to visually indicate disabled state */
+                        text-decoration: none; /* Remove underline */
+                      }
+            }
+        }
+
+        ::ng-deep .mat-expansion-panel-spacing.info_bullets {
+            margin: 0;
+        }
+
+        .watch_video {
+            display: flex;
+            justify-content: flex-end;
+            gap: 3px;
+            flex-direction: row;
+            align-items: center;
+            // margin-top: 8px;
+
+            p {
+                font-family: 'Rubik-Medium';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18px;
+                letter-spacing: 0px;
+                color: #FF6700;
+                // margin-bottom: 7px;
+
+                img {
+                    height: 14px;
+                    width: 14px;
+                    margin-bottom: 4px;
+                }
+            }
+
+        }
+
+
+
+
+    }
+
+
+    .btn_viewmore {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: 8px;
+
+        button {
+            height: 35px;
+            width: 35%;
+            background: transparent;
+            border: transparent;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 8px;
+
+            p {
+                color: #FF6700;
+                font-family: 'Rubik-Medium';
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px;
+                margin: 0;
+            }
+        }
+    }
+}
+::ng-deep .faq_accordian .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover,
+::ng-deep .faq_accordian .mat-expansion-panel .mat-expansion-panel-header{
+    background: #F2F4FB;
+}
+
+
+.show-more-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    /* text-align: center; */
+    /* background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); */
+    /* pointer-events: none; */
+    z-index: 100;
+    // background: linear-gradient(358.89deg, #FFFFFF 1.14%, rgba(255, 255, 255, 0) 187.38%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 17%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1) 100%);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.show-more-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #FF6700;
+    /* Change button color as needed */
+    font-family: Rubik-Medium;
+    font-size: 14px;
+    font-weight: 500 !important;
+    line-height: 18px;
+    letter-spacing: 0px;
+    
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+    margin-bottom: 4px;
+    span{
+        font-family: Rubik-Medium !important;
+        font-weight: 500 !important;
+    }
+}
+
+.fixedHeight {
+    height: 55px;
+    margin-bottom: 5px;
+}
+
+.expanded {
+    max-height: none !important;
+}
+
+.arrow {
+    height: 12px;
+    width: 12px;
+}
+
+.up_arrow {
+    transform: rotate(270deg);
+}
+
+.down_arrow {
+    transform: rotate(90deg);
+}
+.cc-element{
+    transition: max-height 1s cubic-bezier(0, 1.32, 1, 1);    
+}
+.cc-capped{
+    transition: max-height 0.3s;
+}
+.cc-not-capped{
+    max-height: none !important;
+}
+
+.cap-closed{
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.cap-expanded{
+    max-height: none !important;
+    padding-bottom: 10px;
+}
+
+.capper-on{
+    height: 100px;
+    padding-top: 25px;
+}
+
+.capper-on .show-more-button{
+    height: 25px;
+    /* width : 100%; */
+    background: #FFFFFF;
+}
+
+.capper-off{
+    height: auto;
+
+    
+}
+.capper-off .show-more-button{
+    height: auto;
+    width : auto;
+    background: transparent;
+}
+
+.custom_height {}
+
+// ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body .xaem .xaem_raw p {
+//                         /* Styles for paragraphs */
+//                         font-family: 'Rubik-Regular';
+//                         font-size: 14px;
+//                         font-weight: 400;
+//                         line-height: 22px;
+//                         letter-spacing: 0em;
+//                         color: #1A1A1A;
+//                         margin: 0px;
+//                     }
+    
+// ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body .xaem .xaem_raw  ul,
+// ::ng-deep .mat-expansion-panel-content .mat-expansion-panel-body .xaem .xaem_raw ol{
+//                         padding-left: 20px;
+//                     }
+                    // .xaem .xaem_raw {
+                    //     ul, ol{
+                    //     padding-left: 20px;
+                    // }}
+
+// ::ng-deep .main_faq .mat-expansion-panel-header.mat-expanded {
+//     // height: 15px;
+//     height: 24px;
+// }
+
+
+::ng-deep .main_faq .mat-expansion-indicator::after {
+    color: #1A1A1A;
+    border-width: 0px 2px 2px 0 !important;
+    padding: 5px !important;
+    padding-left: 5px;
+}
+
+::ng-deep .main_faq .mat-expansion-panel-header.mat-expanded {
+    background: #F2F4FB;
+    // padding: 0px 12px !important; // not reqired
+}
+
+::ng-deep .main_faq .mat-expansion-panel-header-title {
+    font-family: 'Rubik-Medium';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #1A1A1A;
+    margin-right: 10px;
+    // margin: 0px;
+
+}
+
+// ::ng-deep .main_faq .mat-expansion-panel p {
+//     font-family: 'Rubik-Regular';
+//     font-size: 14px;
+//     font-weight: 400;
+//     line-height: 22px;
+//     letter-spacing: 0em;
+//     color: #1A1A1A;
+//     margin: 0px;
+// }
+
+::ng-deep .main_faq .mat-expansion-panel-header.mat-expanded {
+    // background: #F2F4FB;
+    display: flex;
+    align-items: center !important;
+}
+
+::ng-deep .main_faq .main_faq .mat-accordion {
+    background: #F2F4FB;
+    border-radius: 4px;
+}
+
+::ng-deep .main_faq .mat-expansion-panel-body {
+    background: #F2F4FB;
+    padding: 0px !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+::ng-deep .main_faq .mat-expansion-panel {
+    background: #F2F4FB;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px !important;
+}
+
+::ng-deep .main_faq .mat-expansion-indicator {
+    // margin-top: -3px !important;
+}
+
+::ng-deep .main_faq .mat-expansion-panel-header {
+    padding: 0px !important;
+    height: auto !important;
+    align-items: flex-start;
+}
+
+::ng-deep .main_faq .mat-expansion-indicator::after {
+    margin-top: -12px !important;
+}
+
+::ng-deep .main_faq .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hove {
+    background: #F2F4FB;
+}
+
+::ng-deep .main_faq .mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),
+.mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]) {
+    background: #F2F4FB;
+}
+
+::ng-deep .main_faq .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+    background: #F2F4FB;
+}
+
+@media only screen and (min-width: 768px) {
+    .watch_video p {
+        font-size: 16px;
+    }
+}

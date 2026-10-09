@@ -1,0 +1,37 @@
+<div class="aa_white_background">
+    <div class="aa_max_desktop_width aa_padding_common aa_offers_detail_container">
+        <div class="aa_offers_headers_section">
+            <h3 class="aa_offer_card_heading">{{ 'b2b_sce.aa_offer_details.title' | translate}}</h3>
+            <p class="aa_offer_card_desc">{{ 'b2b_sce.aa_offer_details.description' | translate}}</p>
+        </div>
+        <div class="aa_offers_headers_section">
+            <div class="aa_offers_eligible_container">
+                <img class="aa_offers_eligible_image"
+                    src="https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/congratulation-icon-28?scl=1&fmt=png-alpha"
+                    alt="Loding image">
+                <span>{{ 'b2b_sce.aa_offer_details.eligible_loan_offers' | translate}}</span>
+            </div>
+
+            <app-offer-card [render]="cardsRender"></app-offer-card>
+        </div>
+        <div class="aa_offers_cibilscore_section">
+            <img class="aa_offers_cibilscore_img"
+                src="https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/blue-bulb-16?scl=1&fmt=png-alpha"
+                alt="loading image">
+            <span>{{ 'b2b_sce.aa_offer_details.higher_cibil' | translate}}</span>
+        </div>
+        <div class="aa_offers_upgrade_loan_section">
+            <div style="width: 65; margin-bottom: 12px;">
+                <app-stepper [render]="stepsRender"></app-stepper>
+                <div style="padding: 0px 16px 0px 16px;">
+                    <button class="aa_offers_upgrade_offer_btn">{{ 'b2b_sce.aa_offer_details.upgrade_offer' | translate}}</button>
+                </div>
+            </div>
+            <div class="aa_offer_upgrade_img_section">
+                <img class="aa_offers_upgrade_loan_image"
+                    src="https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/upgrade-offer?scl=1&fmt=png-alpha"
+                    alt="loading image">
+            </div>
+        </div>
+    </div>
+</div>

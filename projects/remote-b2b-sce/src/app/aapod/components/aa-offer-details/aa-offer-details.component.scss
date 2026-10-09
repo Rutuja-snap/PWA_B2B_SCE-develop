@@ -1,0 +1,118 @@
+.aa_max_desktop_width {
+    max-width: 570px;
+}
+
+.aa_padding_common {
+    padding: var(--Gutter_Horizontal, 20px) 16px;
+}
+
+.aa_offers_detail_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.aa_offers_headers_section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.aa_offer_card_heading {
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.aa_offer_card_desc {
+    font-family: Rubik;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aa_offers_eligible_container {
+    width: 100%;
+    background: linear-gradient(89.29deg, #10B97C -2.52%, #138F2E 100%);
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    border-radius: 4px;
+    height: 29px;
+    padding: 8px 4px 8px 4px;
+
+    span {
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 11px;
+        color: #FFFFFF;
+    }
+}
+
+.aa_offers_eligible_image {
+    width: 19px;
+    height: 13px;
+}
+
+.aa_offers_cibilscore_section {
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    background: #F1F1F1;
+    border-radius: 7px;
+
+    .a_offers_cibilscore_img {
+        width: 15.75px;
+        height: 15.75px;
+    }
+
+    span {
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 12px;
+    }
+}
+
+.aa_offers_upgrade_loan_section {
+    border-radius: 4px;
+    border: 1px solid var(--neutrals-gray-grey-90-e-5-e-5-e-5, #E5E5E5);
+    display: flex;
+}
+
+.aa_offers_upgrade_offer_btn {
+    padding: 11.5px 10px 11.5px 10px;
+    width: 186px;
+    border-radius: 82px;
+    border: none;
+    background: linear-gradient(97.13deg, #FF6700 5.56%, #FE8E0C 94.44%);
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.aa_offer_upgrade_img_section {
+    width: 25%;
+    display: flex;
+    align-items: end;
+}
+
+.aa_offers_upgrade_loan_image {
+    width: 100%;
+    height: 140px;
+}
+
+.aa_white_background {
+    background-color: #fff;
+    margin-bottom: 2px;
+}
+
+h3 {
+    margin-bottom: .5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}

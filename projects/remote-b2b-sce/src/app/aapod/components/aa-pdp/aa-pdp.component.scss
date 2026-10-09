@@ -1,0 +1,264 @@
+.aa_pdp_banner_section{
+    display:flex;
+     flex-direction:row;
+     background:#FFF;
+     padding:12px 24px 12px 24px;
+     gap: 16px;
+}
+.aa_pdp_banner_text_section{
+    max-width: 475px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.aa_pdp_banner_mobile_section{
+    border: 1px solid #E5E5E5; border-radius:4px;
+    width: 340px;
+    max-height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0px 12px 0px;
+}
+
+.aa_white_background {
+    background-color: #fff;
+    margin-bottom: 2px;
+} 
+
+.aa_max_desktop_width {
+    max-width: 570px;
+} 
+
+.aa_continue_wrap_one {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--Gutter_Horizontal, 12px);
+    background: var(--bw-white, #FFF);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
+
+    &.two-btns {
+        flex-direction: row;
+    }
+}
+
+.aa_continue_wrap_one_btn {
+    display: flex;
+    height: 40px;
+    // width: 100%;
+    width: -webkit-fill-available;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border: none;
+    border-radius: 82px;
+    background: var(--Gradients-Tangerine, linear-gradient(97deg, #FF6700 5.56%, #FE8E0C 94.44%));
+
+    &.secondary {
+        background: var(--bw-white, #fff);
+        border: 1px solid var(--tangerine-tangerine, #ff6700);
+
+    }
+}
+
+.aa_continue_wrap_one_btn_text {
+    color: var(--bw-white, var(--neutrals-white-ffffff, #FFF));
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Uppercase/Rubik - 14 */
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+
+    &.secondary {
+        color: var(--tangerine-tangerine, #ff6700);
+    }
+} 
+
+.aa_pdp {
+
+    .aa_pdp_desc {
+        padding: 10px 16px 10px 16px;
+        gap: 10px;
+        background-color: #FFF;
+
+        p {
+            font-family: 'Rubik-Regular';
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #666666;
+        }
+    }
+
+    .sticky-bottom-right {
+        position: fixed;
+        bottom: calc(15px + var(--pdpx_bottom));
+        // bottom: 15px;
+        right: 12px;
+        z-index: 1000;
+        width: 45%;
+        max-width: 250px;
+    }
+
+    .sticky-bottom-right .layout-button .component-button {
+        height: 45px;
+        width: 80%;
+        border-radius: 82px;
+
+        .mouse_scroll .arrow {
+            gap: 4px;
+        }
+    }
+
+    .mob_view {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+
+    .aa_pod_showmore_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--tangerine-orange-tangerine-ff-6700, #FF6700);
+        background: #FFFFFF;
+        padding-bottom: 14px;
+
+        span {
+            font-family: Rubik;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+
+    .aa_pdp_section1 {
+        display: flex;
+        flex-direction: row;
+        background: #FFF;
+        padding: 12px 24px 12px 24px;
+        gap: 16px;
+
+        .aa_pdp_text_Section {
+            max-width: 453px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .aa_pdp_mobile_detail_container {
+            border: 1px solid #E5E5E5;
+            height: 250px;
+            border-radius: 4px;
+            width: 335px;
+            display: flex;
+            padding: 12px 16px 12px 16px;
+            background-color: rgba(250, 250, 250, 1);
+            align-items: center;
+
+            .aa_pdp_mobile_detail_section {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .aa_pdp_mobile_section_heading {
+                font-family: Rubik;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .aa_pdp_section2 {
+        display: flex;
+        gap: 32px;
+        background: #FFFFFF;
+    }
+
+}
+
+.aa_xaop_dcx_input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .mat-mdc-form-field {
+        margin-bottom: 0 !important;
+    }
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.aa_xaop_dcx_input .mat-mdc-form-field.xaop-form-field .mat-form-field-wrapper .mat-form-field-subscript-wrapper div .mat-mdc-form-field-error {
+    display: flex !important;
+    gap: 4px;
+    align-items: center;
+} 
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.aa_xaop_dcx_input .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    background: #f0f8ff !important;
+    border: 3px solid #aeddff;
+    border-radius: 7px !important;
+    color: #999999 !important;
+} 
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.aa_xaop_dcx_input .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    padding: 0px !important;
+    position: relative;
+}
+
+.aa_xaop_dcx_input {
+
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+        color: #B40000;
+    }
+
+    .mat-mdc-form-field .mat-mdc-input-element {
+        color: #000;
+        font-size: 14px;
+        font-family: 'Rubik-Regular';
+        height: 100%;
+        font-weight: 400;
+    }
+} 
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 64px); 
+    overflow: hidden;
+}
+
+.input-form {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    background: #FAFAFA;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    height: auto;
+    margin: auto;
+    &::-webkit-scrollbar {
+      display: none; // Chrome, Safari
+    }
+}

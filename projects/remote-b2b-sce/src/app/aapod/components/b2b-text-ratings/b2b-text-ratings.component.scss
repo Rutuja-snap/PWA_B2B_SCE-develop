@@ -1,0 +1,33 @@
+.doc_loan{
+    background:#fff;
+    padding: 12px 16px 12px 16px;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+}
+.loans_heading{
+    color: #1A1A1A;
+    font-family:'Rubik-Medium';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0px;
+}
+.desc{
+    color: #666;
+    font-family:'Rubik-Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@media (min-width:768px) {
+    .doc_loan{
+        padding: 0 16px;
+    }
+    .loans_heading {
+        font-size: 24px;
+    }
+}

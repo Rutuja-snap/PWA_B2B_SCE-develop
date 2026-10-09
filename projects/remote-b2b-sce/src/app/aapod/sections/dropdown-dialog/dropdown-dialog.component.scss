@@ -1,0 +1,32 @@
+.top-title {
+    padding: 18px 12px;
+    background: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        font-size: 14px;
+        color: #000;
+        font-family: "Rubik-Medium", sans-serif;
+    }
+}
+
+.list-Container {
+    overflow-y: auto;
+    min-height: 84px;
+    height: 100%;
+    max-height: 396px;
+
+    li {
+        padding: 10px 12px;
+        border-bottom: 1px solid #CCCCCC;
+        font-size: 14px;
+        color: #1A1A1A;
+
+        &.select {
+            background: #F0F8FF;
+        }
+    }
+
+}

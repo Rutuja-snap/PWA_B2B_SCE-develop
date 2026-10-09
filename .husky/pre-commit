@@ -1,0 +1,26 @@
+#!/bin/bash
+
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch: ${current_branch}"
+
+# echo "Prettifying code..."
+# npm run prettify
+ 
+echo "Staging prettified files..."
+git add .
+
+echo "Running lint.."
+if npm run lint; then
+    echo "Linting succeeded!"
+else
+    echo "Linting failed!"
+    exit 1
+fi
+
+echo "Build started..."
+if node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build --c=prod; then
+    echo "Build succeeded!"
+else
+    echo "Build failed!"
+    exit 1
+fi

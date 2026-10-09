@@ -1,0 +1,49 @@
+<div *ngIf="render" class="aa_offer_card_container">
+    <div class="aa_offer_card" *ngFor="let card of render; let i=index">
+        <div class="aa_offer_card_section">
+            <div class="aa_offer_card_desc_section">
+                <img class="aa_offer_img"
+                    src="https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/car-loan?scl=1&fmt=png-alpha"
+                    alt="loading image">
+                <div class="aa_offer_pricedesc">
+                    <span>{{'b2b_sce.offer_card.up_to' | translate}} <span>{{'b2b_sce.offer_card.price_desc'| translate}}</span></span>
+                    <span>{{ card.carddesc | translate }}</span>
+                </div>
+            </div>
+            <button class="aa_offer_explore_btn">{{'b2b_sce.offer_card.explore'| translate}}</button>
+        </div>
+
+        <hr class="aa_offer_line">
+
+        <div *ngIf="card.show" class="aa_offer_more_detail_section">
+            <div class="aa_offer_more_detail_heading">
+                {{'b2b_sce.offer_card.more_details' | translate}}
+            </div>
+            <div class="aa_offer_more_detail_abt" *ngFor="let detail of [1,2,3]">
+                <img src="https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/intrest-rate?scl=1&fmt=png-alpha"
+                    alt="loadinf image">
+                <span>{{'b2b_sce.offer_card.rate_of_interesting' | translate}}</span>
+            </div>
+            <div class="aa_offer_view_detail_arrow">
+                <span (click)="toggleViewDetails(i)">{{'b2b_sce.offer_card.hide_details' | translate}}</span>
+                <svg (click)="toggleViewDetails(i)" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="orangered" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+
+        <div *ngIf="!card.show" class="aa_offer_view_detail_arrow">
+            <span (click)="toggleViewDetails(i)">{{'b2b_sce.offer_card.view_details' | translate}}</span>
+            <svg (click)="toggleViewDetails(i)" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="orangered" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+
+        <div>
+
+        </div>
+
+    </div>
+</div>

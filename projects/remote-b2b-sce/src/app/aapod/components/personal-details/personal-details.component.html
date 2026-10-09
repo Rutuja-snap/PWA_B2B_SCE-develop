@@ -1,0 +1,141 @@
+<div class="aa_white_background">
+    <div class="aa_card_wrapper aa_max_desktop_width">
+        <div class="aa_personalize_offer">
+            <div class="aa_personalize_offer_heading">{{ aemData?.['check-your-loan']?.title }}</div>
+            <div class="aa_personalize_offer_desc">{{ aemData?.['check-your-loan']?.description}}</div>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="personalDetailsForm" class="form-container aa_personal_details_content">
+    <div class="aa_white_background input-form">
+        <div class="aa_emptype_wrapper aa_max_desktop_width">
+            <div class="aa_pd_box">
+                <div class="aa_pd_box_header">
+                    <div class="aa_pd_box_header_title">{{ aemData?.['personal-details']?.title }}</div>
+                    <div class="aa_pd_box_header_desc">{{ aemData?.['personal-details']?.description }}</div>
+                </div>
+
+                <div class="aa_pd_box_fields">
+                    <div class="aa_xaop_dcx_input">
+                        <mat-label *ngIf="aemData?.['full-name-pan']?.title" class="aa_mat_label"> {{ aemData?.['full-name-pan']?.title }}
+                        <span class="astrick">*</span>
+                        </mat-label>
+                        <mat-form-field *ngIf="aemData?.['full-name-pan']" [ngClass]="{'error-present':getErrorMessage('fullName'), 'etb-background': (aaFlow.sceFormData.customerType == 'ETB')}" class="aa_field_full_width aa_personal_form_fields" hideRequiredMarker="true" appearance="outline">
+                            <input matInput inputmode="text" type="text"
+                                [formControl]="getFormControl('fullName')" placeholder="Enter full name"
+                                autocomplete="off" [appInputValidation]="'alpha'">
+
+                            <span *ngIf="getFormControl('fullName')?.value != ''" class="aa_field_input_cross"
+                                (mousedown)="eraseField('fullName',false,$event)"></span>
+                            <mat-error>
+                                <div>
+                                    <img class="aa_emptype_box_selection_error_icon"
+                                        src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg"
+                                        alt="">
+                                    <!-- {{this.getErrorMsg(aem.personal_Fields[0].formcontroller)}} -->
+                                    {{getErrorMessage('fullName') | translate}}
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="aa_xaop_dcx_input">
+                        <mat-label *ngIf="aemData?.['date-of-birth']?.title" class="aa_mat_label"> {{ aemData?.['date-of-birth']?.title }}
+                        <span class="astrick">*</span>
+                        </mat-label>
+                        <mat-form-field *ngIf="aemData?.['date-of-birth']" [ngClass]="{'error-present':getErrorMessage('dob'), 'etb-background': (aaFlow.sceFormData.customerType == 'ETB')}" class="aa_field_full_width aa_personal_form_fields" hideRequiredMarker="true" appearance="outline">
+                            <input #aa_field_pdDOB matInput inputmode="numeric"
+                                (focusin)="inputMask()" (keypress)="AllowDobNumeric($event)"
+                                [formControl]="getFormControl('dob')" placeholder="Enter date of birth"
+                                autocomplete="off">
+                            <span *ngIf="getFormControl('dob')?.value != ''" class="aa_field_input_cross"
+                                (mousedown)="eraseField('dob',false,$event)"></span>
+                            <mat-error *ngIf="getErrorMessage('dob')">
+                                <div>
+                                    <img class="aa_emptype_box_selection_error_icon"
+                                        src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg"
+                                        alt="">
+                                    {{getErrorMessage('dob') | translate}}
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="aa_xaop_dcx_input">
+                        <mat-label *ngIf="aemData?.['pan-wrapper']?.['group']?.[0]?.title" class="aa_mat_label"> {{ aemData?.['pan-wrapper']?.['group']?.[0]?.title }}
+                            <span class="astrick">*</span>
+                            <span class="info_tooltip" *ngIf="true"
+                                (click)="infoBtnClickCT('pancard');$event.stopPropagation()"
+                                mat-icon-button matSuffix>
+                                <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/info_tooltip.svg"
+                                    alt="">
+                            </span>
+                        </mat-label>
+                        <mat-form-field *ngIf="aemData?.['pan-wrapper']?.['group']?.[0]" [ngClass]="{'error-present':getErrorMessage('pan'), 'etb-background':  (aaFlow.sceFormData.customerType == 'ETB')}" class="aa_field_full_width aa_personal_form_fields" hideRequiredMarker="true" appearance="outline">
+                            <input style="text-transform: uppercase;" matInput
+                                inputmode="text" type="text" (input)="panModifier($event)"
+                                [formControl]="getFormControl('pan')" placeholder="Enter 10-character alphanumeric PAN"
+                                maxlength="10" autocomplete="off"
+                                [appInputValidation]="'alphaNumeric'">
+
+                            <span *ngIf="getFormControl('pan')?.value !== ''" class="aa_field_input_cross"
+                                (mousedown)="eraseField('pan',false,$event)"></span>
+                            <mat-error *ngIf="getErrorMessage('pan')">
+                                <div>
+                                    <img class="aa_emptype_box_selection_error_icon"
+                                        src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg"
+                                        alt="">
+                                    {{getErrorMessage('pan') | translate}}
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="aa_xaop_dcx_input">
+                        <mat-label *ngIf="aemData?.['employment-type']?.['field-label-main']" class="aa_mat_label">{{ aemData?.['employment-type']?.['field-label-main'] }}
+                            <span class="astrick">*</span>
+                        </mat-label>
+                        <mat-form-field *ngIf="aemData?.['employment-type']" [ngClass]="{'error-present':getErrorMessage('empType'), 'aa_personal_form_emp_fields': empTypeErrorMssg }" class="aa_field_full_width aa_personal_emp_before" hideRequiredMarker="true" appearance="outline">
+                            <input #dropdownVal readonly matInput
+                            inputmode="text" type="text"
+                                [formControl]="getFormControl('empType')" [placeholder]="'Select employment type'"
+                                autocomplete="off" appCharacterWithSpace (click)="openDialog('empType')">
+                            <span class="droparrow" (click)="openDialog('empType')"></span>
+                            <mat-error *ngIf="getErrorMessage('empType')">
+                                <div *ngIf="empTypeErrorMssg">
+                                    <img class="aa_emptype_box_selection_error_icon"
+                                        src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/warning.svg"
+                                        alt="">
+                                    {{empTypeErrorMssg | translate}}
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="aa_white_background consent-form">
+    <div class="aa_continue_wrap_one  aa_max_desktop_width">
+        <div *ngIf="aemData?.['verify-the-information']?.description" class="aa_consent_wrap" [ngClass]="{'check-term': getFormControl('customerConsent').touched && getFormControl('customerConsent').errors}">
+                <div class="aa_consent_checkbox">
+                    <mat-checkbox [formControl]="getFormControl('customerConsent')"
+                        (change)="onConsentChange()"></mat-checkbox>
+                </div>
+                <div class="aa_consent_text">
+                    {{ aemData?.['verify-the-information']?.description }}
+                </div>
+        </div>
+        <div class="aa_continue_wrap_one_error" *ngIf="ctaStackErrMsg?.length >0 ">
+            <div *ngIf="ctaStackErrMsg" class="aa_continue_wrap_one_error_text">
+                <img class="aa_emptype_box_selection_error_icon"
+                    src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/sce/exclamation_alert.png">
+                {{ctaStackErrMsg | translate}}
+            </div>
+        </div>
+        <button class="aa_continue_wrap_one_btn aa_continue_btn_desktop" (click)="onProceed()">
+            <div class="aa_continue_wrap_one_btn_text">{{ aemData?.['button-section']?.['multi-cta-set']?.[0]?.ctaLabel }}</div>
+        </button>
+    </div>
+</div>
+</form>

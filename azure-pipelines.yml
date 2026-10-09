@@ -1,0 +1,43 @@
+resources:
+  repositories:
+    - repository: CentralizedActions
+      type: github
+      endpoint: 'github.com_mallinath-b_bflghec'
+      name: 3in1-AppFrontEnd/Common_Actions_Code
+      ref: refs/heads/master
+
+parameters:
+  - name: projects
+    displayName: "Select Project to Build and Deploy"
+    type: string
+    default: app
+    values: [app, web]
+
+  - name: manualAppVersion
+    displayName: "App Version(used only for app)"
+    type: string
+    default: "26.1.1"
+
+variables:
+  build_command: "remote-b2b-sce"
+  app_deployment_url: "remote-sce"
+  web_deployment_url: "remote-b2b-sce"
+  json_key : "b2b-sce"
+
+trigger: none
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- template: azure/azure-pipeline-central.yml@CentralizedActions
+  parameters:
+    projects: ${{ parameters.projects }}
+    ${{ if eq(parameters.projects, 'app') }}:
+      app_version: ${{ parameters.manualAppVersion }}
+    ${{ else }}:
+      app_version: ''
+    build_command: "$(build_command)"
+    app_deployment_url: "$(app_deployment_url)"
+    web_deployment_url: "$(web_deployment_url)"
+    json_key: "$(json_key)"
+    enable_pre_validations: true

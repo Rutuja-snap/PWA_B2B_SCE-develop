@@ -1,0 +1,26 @@
+{
+  // Jest / ts-jest spec config for Angular tests
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jest",
+      "node"
+    ],
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "files": [
+    "setup-jest.ts"
+  ],
+  "include": [
+    "projects/remote-b2b-sce/src/**/*.spec.ts",
+    "projects/remote-b2b-sce/src/**/*.d.ts",
+    "projects/remote-b2b-sce/src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -1,0 +1,42 @@
+<app-success-page *ngIf="successPage"></app-success-page>
+
+<div *ngIf="!successPage" class="aa_white_background">
+    <div class="aa_max_desktop_width">
+        <div class="aa_ivc_screen_container">
+            <div class="aa_ivc_screen_image">
+                <img class="aa_ivc_screen_image_section"
+                    [src]= "aemData?.['income-verification-title']?.['iconimage-android']"
+                    alt="loading image">
+            </div>
+            <div class="aa_ivc_content_heading">{{aemData?.['income-verification-title']?.title}}</div>
+        </div>
+    </div>
+</div>
+<div class="aa_white_background aa_viewport">
+    <div class="aa_max_desktop_width">
+        <div class="aa_det_what_next">
+            <div class="aa_det_what_next_content_heading">
+                <h2 class="aa_det_what_next_heading" *ngIf="aemData?.['what-next']?.title">{{aemData?.['what-next']?.title}}</h2>
+            </div>
+                <div class="aa_det_vertical_tracker" *ngFor="let lines of aemData?.['what-next-wrapper']?.group; let i = index">
+                    <div class="aa_det_data_point">
+                        <div class="aa_det_circle_badge" 
+                        [ngClass]="{ 'aa_check_icon': i < 2,'aa_green_solid': i >= 2 && i < 4,'aa_blank_circle': i >= 4}"><span [ngClass]="{'aa_det_solid_circle' :  i >= 2 && i < 4}" class="">
+                            <div *ngIf="i < 2" class="check-icon">
+                                <svg width="12.25px" height="12.25px" viewBox="0 0 24 24" fill="none" stroke="#067161" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                        </span></div>
+                        <div class="aa_det_solid_vertical_line" *ngIf="i !== aemData?.['what-next-wrapper']?.group.length - 1"
+                        [ngClass]="{ 'aa_det_solid_vertical_line_border_green': i < 3, 'aa_det_solid_vertical_line_border_gray': i >= 3} "></div>
+                        <div class="aa_det_data_lines" [ngClass]="{'aa_highlighted': lines.title === 'Contact our representative'}">
+                            <div class="aa_det_data_line aa_det_title"
+                            [ngClass]="{ 'aa_det_title_black': i < 2,'aa_det_title_bold': i > 1 && i < 3,'aa_det_title_gray': i >= 3}">{{lines.title}}</div>
+                            <div class="aa_det_data_line aa_det_desc" [ngClass]="{'aa_det_desc_gray': i < 2, 'aa_det_desc_black' : i > 1 && i < 3}">{{lines.description}}</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

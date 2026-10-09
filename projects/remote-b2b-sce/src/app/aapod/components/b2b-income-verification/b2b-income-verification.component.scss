@@ -1,0 +1,197 @@
+.aa_white_background {
+    background-color: #fff;
+    margin-bottom: 2px;
+
+    .aa_max_desktop_width {
+        max-width: 570px;
+    }
+
+    .aa_ivc_screen_container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 16px;
+        gap: 4px;
+        align-self: stretch;
+
+        .aa_ivc_screen_image {
+            display: flex;
+            justify-content: center;
+            padding: 3px 1px 1px 1px;
+
+            .aa_ivc_screen_image_section {
+                width: 17.5px;
+                height: 17.5px;
+            }
+        }
+
+        .aa_ivc_content_heading {
+            color: var(--Typography-Black-90, var(--neutrals-black-1-a-1-a-1-a, #1A1A1A));
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0%;
+        }
+
+        
+    }
+}
+
+.aa_viewport {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    // justify-content: center;
+}
+
+.aa_det_what_next_content_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    .aa_det_what_next_heading {
+        font-family: Rubik;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #1A1A1A;
+    }
+}
+
+.aa_check_icon {
+    background: #CEEAE5;
+}
+
+.aa_green_solid {
+    border: 1px solid #99D8CF;
+    background: #FFFFFF;
+}
+
+.aa_blank_circle {
+    border: 2px solid #CCCCCC;
+    background: #FFFFFF;
+}
+
+.aa_highlighted {
+    background: #DEEDFF;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.aa_det_what_next {
+    background-color: #FFFFFF;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    // gap: 12px;
+
+    .aa_det_vertical_tracker {
+        display: flex;
+        flex-direction: column;
+
+        .aa_det_data_point {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            position: relative;
+            gap: 10px;
+
+            .aa_det_circle_badge {
+                width: 21px;
+                height: 21px;
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 9px;
+                margin-top: 3px;
+
+                .aa_det_solid_circle {
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: #99D8CF;
+                    position: relative;
+                    padding: 6px;
+                    z-index: 10000;
+                }
+            }
+        }
+
+
+        .aa_det_solid_vertical_line {
+            position: absolute;
+            left: 10px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            transform: rotate(180deg);        
+        }
+
+        .aa_det_solid_vertical_line_border_green {
+            border-left: 2px solid #CEEAE5;
+        }
+
+        .aa_det_solid_vertical_line_border_gray {
+            border-left: 2px solid #CCCCCC;
+        }
+
+        .aa_det_data_lines {
+            display: flex;
+            flex-direction: column;
+
+            .aa_det_title{
+                font-family: 'Rubik';
+                letter-spacing: 0px;
+                text-align: left;
+                vertical-align: middle;
+            }
+
+            .aa_det_title_black {
+                color: #1A1A1A;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+            }
+            .aa_det_title_bold {
+                color: #1A1A1A;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 100%;
+            }
+            .aa_det_title_gray {
+                color: #999999;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+            }
+
+            .aa_det_desc {
+                font-family: 'Rubik-Regular';
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .aa_det_desc_gray {
+                color: #666666;
+            }
+            .aa_det_desc_black {
+                color: #1A1A1A
+            }
+            .aa_det_data_line {
+                margin-top: 2px;
+            }
+
+        }
+    }
+}

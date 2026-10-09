@@ -1,0 +1,71 @@
+rules:
+  - id: no-direct-dom-manipulation
+    patterns:
+      - pattern: |
+          document.querySelector(...)
+      - pattern: |
+          document.getElementById(...)
+      - pattern: |
+          element.innerHTML = ...
+    message: Avoid direct DOM manipulation; use Angular's Renderer2 service instead.
+    languages:
+      - typescript
+    severity: WARNING
+
+  - id: no-console-log
+    pattern: console.log(...)
+    message: Remove `console.log` statements; they may leak sensitive information in production.
+    languages:
+      - typescript
+    severity: INFO
+
+  - id: no-hardcoded-secrets
+    pattern: |
+      const $SECRET = ...
+    message: Avoid hardcoding sensitive data like API keys or passwords.
+    languages:
+      - typescript
+    severity: ERROR
+    metadata:
+      category: security
+
+  - id: use-httpclient
+    pattern: new XMLHttpRequest()
+    message: Use Angular's HttpClient module for making HTTP requests instead of raw XMLHttpRequest.
+    languages:
+      - typescript
+    severity: WARNING
+
+  # - id: restrict-any-type
+  #   pattern: let $VAR: any = ...
+  #   message: Avoid using the `any` type; it bypasses TypeScript's type-checking.
+  #   languages:
+  #     - typescript
+  #   severity: WARNING
+
+  - id: unsafe-bypasssecuritytrust
+    pattern: |
+      $SANITIZER.bypassSecurityTrust...
+    message: Using `bypassSecurityTrust` can expose your app to XSS vulnerabilities. Use sanitized inputs where possible.
+    languages:
+      - typescript
+    severity: ERROR
+
+  - id: prevent-inline-styles
+    pattern: |
+      element.style...
+    message: Avoid using inline styles; prefer using Angular's binding for `style` or CSS classes.
+    languages:
+      - typescript
+    severity: WARNING
+
+  - id: detect-deprecated-methods
+    pattern: |
+      $OBJ.$METHOD(...)
+    metavariables:
+      METHOD:
+        regex: "(ngOnInit|ngOnChanges|ngDoCheck)"
+    message: Avoid using deprecated lifecycle hooks; check Angular's latest documentation for alternatives.
+    languages:
+      - typescript
+    severity: INFO

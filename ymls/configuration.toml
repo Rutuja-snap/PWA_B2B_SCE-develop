@@ -1,0 +1,7 @@
+[azure_devops]
+org = "https://dev.azure.com/BFLDevOpsOrg/"
+pat = "$(azure_devops_pat)"
+ 
+[api]
+provider = "azure"
+api_key_url = "https://3in1-chatbot-yellow-messenger-poc.openai.azure.com/"

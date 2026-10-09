@@ -1,0 +1,12 @@
+<div class="aa_income_fail_wrap">
+    <div class="aa_income_fail_red_box">
+        <div class="aa_income_fail_red_box_title">{{aemData?.['unable-verify-income']?.title}}</div>
+        <div class="aa_income_fail_red_box_desc">{{aemData?.['unable-verify-income']?.description}}</div>
+        <div class="aa_income_fail_red_box_btn">
+            <div class="aa_income_fail_red_box_btn_text" (click)="onRetry()">{{aemData?.['unable-verify-income']?.['multi-cta-set'][0]?.ctaLabel}}</div>
+        </div>
+        <div class="aa_income_fail_attemp_desc">
+            <!-- <div class="aa_income_fail_attemp_desc_text">{{aemData?.['unable-verify-income']?.subdescription}}</div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="aa_det_what_next">
+    <h4>{{this.render.title | translate}}</h4>
+    <p *ngIf="this.render.description">{{this.render.description | translate}}</p>
+    <div class="aa_det_vertical_tracker">
+        <div class="aa_det_data_point" *ngFor="let lines of this.render.data; let i = index">
+            <div class="aa_det_circle_badge"><span class="aa_det_numDatafont">{{lines.numData | translate}}</span></div>
+            <div class="aa_det_dot" *ngIf="i !== this.render.data.length - 1"></div>
+            <div class="aa_det_data_lines">
+                <div class="aa_det_data_line aa_det_title">{{lines.title | translate}}</div>
+                <div *ngIf="lines.description" class="aa_det_data_line aa_det_desc">{{lines.description | translate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

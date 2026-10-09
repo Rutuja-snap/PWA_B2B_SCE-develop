@@ -1,0 +1,84 @@
+    <!-- for like and share icon added d_none class  -->
+
+    <div class="x-xhim-wrap">
+
+
+        <div xhimmer [xid]="this.render?.id" class="carousel_container" *ngIf="this.render?.banners?.length > 0">
+          <div class="xhim-container desk_container">
+              <div class="xhim-block selected_image">
+              <!-- <div class="selected_image" [@slide]="isMobile ? selectedIndex  : false"> -->
+    
+                <ng-container *ngFor="let image of this.render.banners; let i = index">
+                    <img [src]="image.link" [alt]="image.alt" class="carousel_img {{selectedIndex == i ? 'image_active' : ''}}"
+                        (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd($event)">
+                    <!-- add type condition on play button  -->
+                    <button class="xhim-icon play_button" *ngIf="selectedIndex == i && image?.type == 'video'" (click)="playVideo(image)">
+                        <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/play.svg" alt="">
+                    </button>
+                </ng-container>
+                  <div class="xhim-icon share_icon mob_view_disabled" *ngIf="this.render?.showShareIcon" (click)="this.onShare()">
+                      <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/share_icon.png" alt="">
+                  </div>
+                  <div class="xhim-icon share_icon d_none like_img_top desktop_view">
+                      <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/heart_like.png" alt="">
+                  </div>
+    
+            
+              </div>
+              <div class="side_scroll_container desktop_view" >
+                  <!-- <button class="desk_control_btn back_btn" (click)="prevClick()">
+                      <img class="up_arow" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/icon_arrow_right.svg" alt="">
+                  </button> -->
+                  <button class="desk_control_btn back_btn" (click)="scrollSmoothly('backward')">
+                    <img class="up_arow" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/icon_arrow_right.svg" alt="">
+                </button>
+                  <div class="xhim-container scrolling_images_container" #scrollingImages>
+                      <ng-container *ngFor="let dot of this.render.banners; let i = index">
+                        <div class="xhim-block">
+                            <img [src]="dot.link" alt=""
+                            class="scrolling_images {{selectedIndex === i ? 'active_indicator' : ''}}"
+                            (click)="selectImage(i)"
+                            (mouseenter)="imageHover(i)"
+                            (mouseleave)="imageHoverLeft()">
+                        </div>
+                      </ng-container>
+                  </div>  
+                  <!-- <button class="desk_control_btn next_btn" (click)="nextClick()">
+                      <img class="down_arow"  src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/icon_arrow_right.svg" alt="">
+                  </button> -->
+                  <button class="desk_control_btn next_btn" (click)="scrollSmoothly('forward')">
+                    <img class="down_arow"  src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/icon_arrow_right.svg" alt="">
+                </button>
+              </div>
+          </div>
+      
+          <div class="xhim-inviz indicator_container mob_view" *ngIf="this.render.indicators">
+              <div class="indicators">
+                  <ng-container *ngFor="let dot of this.render.banners; let i = index">
+                      <span *ngIf="dot.type != 'video'"
+                          class="indicator circle {{selectedIndex === i ? 'active_indicator' : ''}}" (click)="selectImage(i)">
+                      </span>
+                      <img *ngIf="dot.type == 'video'" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/play_icon.svg" alt=""
+                          class="indicator play_icon {{selectedIndex === i ? 'active_indicator' : ''}}"
+                          (click)="selectImage(i)">
+                      <!-- </span> -->
+                  </ng-container>
+              </div>
+              <div class="xhim-icon like_img d_none mob_view" >
+                <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/heart_like.png" alt="">
+              </div>
+          </div>
+      
+          <div class="carousel_note">
+              <img class="xhim-icon" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/shield_tick.svg" alt="">
+              <span class="xhim-text">{{render.footer_text}}</span>
+          </div>
+      
+      
+      
+      </div>
+    
+    </div>
+    
+    <div #vxPlayerContainer id="kpoint-reels"></div>
+    

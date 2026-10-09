@@ -1,0 +1,25 @@
+{
+  "name": "semgrep-pr-validation",
+  "version": "1.0.0",
+  "description": "A Node.js script for validating pull requests with Semgrep and posting results.",
+  "main": "semgrep-scan.js",
+  "scripts": {
+    "start": "node semgrep-scan.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.x",
+    "npm": ">=6.x"
+  },
+  "keywords": [
+    "semgrep",
+    "pull-request-validation",
+    "azure-pipelines",
+    "nodejs"
+  ],
+  "author": "Chaitanya",
+  "license": "MIT"
+}

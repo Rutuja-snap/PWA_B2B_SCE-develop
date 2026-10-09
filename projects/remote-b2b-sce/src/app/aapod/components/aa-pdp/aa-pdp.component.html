@@ -1,0 +1,58 @@
+<div *ngIf="isMobile; else desktopLayout" class="form-container">
+    <div class="aa_pdp aa_margin_b_mob input-form">
+        <app-b2b-text-ratings [render]="textRatings"></app-b2b-text-ratings>
+        <app-b2b-banners-carousel [render]="carouselConfig"> </app-b2b-banners-carousel>
+        <hr>
+        <div class="aa_pdp_desc">
+            <p style="text-align:center;">{{textDesc | translate}}</p>
+        </div>
+        <hr>
+        <app-feature-cards [render]="benefitsCards"></app-feature-cards>
+        <hr>
+        <app-steps-component [render]="stepsRender"></app-steps-component>
+        <hr>
+        <app-b2b-xfaq [render]="faqs" [maxheight]="300"></app-b2b-xfaq>
+        <hr>
+        <app-b2b-watch-videos [render]="watchVideos"></app-b2b-watch-videos>
+        <div class="aa_white_background consent-form">
+            <div class="aa_continue_wrap_one aa_max_desktop_width">
+                <button class="aa_continue_wrap_one_btn" (click)="onProceed()">
+                    <div class="aa_continue_wrap_one_btn_text">{{ ctaLabel }}</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #desktopLayout>
+    <!-- Desktop Layout -->
+    <div class="desktop-layout aa_pdp">
+        <div class="aa_pdp_banner_section">
+            <app-b2b-banners-carousel [render]="carouselConfig"> </app-b2b-banners-carousel>
+            <div class="aa_pdp_banner_text_section">
+                <app-b2b-text-ratings [render]="textRatings"></app-b2b-text-ratings>
+                <hr class="hr_grey">
+                <div class="aa_pdp_desc">
+                    <p style="text-align:left;">{{textDesc | translate}}</p>
+                </div>
+            </div>
+            <div class="aa_pdp_banner_mobile_section">
+                <div class="aa_white_background">
+                    <button class="xaop_primary_cta" style="width:200px;" (click)="onProceed()">
+                        <div class="aa_continue_wrap_one_btn_text">{{ ctaLabel }}</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <app-feature-cards [render]="benefitsCards"></app-feature-cards>
+            <hr>
+            <app-steps-component [render]="stepsRender"></app-steps-component> <!-- its css not in its own class and this comp is in sce itself -->
+            <hr>
+            <app-b2b-xfaq [render]="faqs" [maxheight]="300"></app-b2b-xfaq>
+            <hr>
+            <app-b2b-watch-videos [render]="watchVideos"></app-b2b-watch-videos>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,86 @@
+schema-version: v1
+rulesets:
+  - javascript-best-practices:
+    rules:
+      no-console:
+        severity: NONE
+        ignore:
+          - "**"
+  - javascript-browser-security
+  - javascript-code-style
+  - javascript-common-security
+  - javascript-express
+  - javascript-inclusive
+  - javascript-node-security
+  - jsx-react
+  - tsx-react
+  - typescript-best-practices:
+    rules:
+      no-console:
+        severity: NONE
+        ignore:
+          - "**"
+      no-explicit-any:
+        severity: NONE
+        ignore:
+          - "**"
+      method-name:
+        severity: NONE
+        ignore:
+          - "**"
+      parameter-name:
+        severity: NONE
+        ignore:
+          - "**"
+      assignment-name:
+        severity: NONE
+        ignore:
+          - "**"
+      boolean-prop-naming:
+        severity: NONE
+        ignore:
+          - "**"
+      no-alert:
+        severity: NONE
+        ignore:
+          - "**"
+      # no-empty:
+      #   severity: NONE
+      #   ignore:
+      #     - "**"
+  - typescript-browser-security
+  - typescript-code-style:
+    rules:
+      class-name:
+        severity: NONE
+        ignore:
+          - "**" 
+      max-params:
+        severity: NONE
+        ignore:
+          - "**"  
+      method-name:
+        severity: NONE
+        ignore:
+          - "**"
+      parameter-name:
+        severity: NONE
+        ignore:
+          - "**"
+      assignment-name:
+        severity: NONE
+        ignore:
+          - "**"
+  - typescript-common-security
+  - typescript-express
+  - typescript-inclusive
+  - typescript-node-security
+  - github-actions
+ignore:
+  - "dist"
+  - "**/*.spec.ts"
+  - "**/*.spec.js"
+# Do not add the content of the `.gitignore` file to the `ignore` list.
+ignore-gitignore: true
+# Do not analyze files larger than 256 kB.
+# max-file-size-kb: 256

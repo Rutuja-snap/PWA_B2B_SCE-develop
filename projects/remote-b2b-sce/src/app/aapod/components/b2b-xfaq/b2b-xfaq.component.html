@@ -1,0 +1,43 @@
+<div class="main_faq">
+    <div class="custom_height     cc-element {{this.isCapEnabled ? (this.isCapExpanded ? 'cap-expanded' : 'cap-closed') + ' cc-capped': 'cc-not-capped'}}"
+             #faqContent (window:resize)="onResize($event)">
+
+        <h3 class="heading_faq">{{ 'b2b_sce.b2b_xfaq.faq' | translate }}</h3>
+        <mat-accordion class="faq_accordian" [multi]="false">
+            <ng-container *ngFor="let xf of this.render.faqs; let i = index">
+                <mat-expansion-panel  class="info_bullets" 
+                [expanded]="this.render.expansion_mode == 'none' ? false : (this.render.expansion_mode == 'first' ? i == 0:false)"
+                (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{xf.question}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    
+                    <div class="xaem" (click)="processLinks($event)">
+                        <div class="xaem_raw" [innerHtml]="xf.answer"></div>
+                    </div>
+
+                    <!-- #pdpx_kpoint -->
+                    <div class="watch_video"  *ngIf="xf.is_cta && xf.cta" (click)="onXFaqCTA(xf)" >
+                        <p>{{xf.cta?.label}} <img *ngIf="xf.cta_icon?.link" [src]="xf.cta_icon?.link" alt=""></p>
+                    </div> 
+                    
+                    
+                </mat-expansion-panel>
+            </ng-container>
+        </mat-accordion>
+    </div>
+
+    <div class="show-more-overlay  {{!this.isCapExpanded ? 'capper-on' : 'capper-off'}}" *ngIf="this.isCapEnabled">
+        <button (click)="this.capAction()" class="show-more-button" >
+            <img class="arrow {{this.isCapExpanded ? 'up_arrow' : 'down_arrow'}}" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/arrow_right_orange.svg" alt="">
+            <span><b>{{this.isCapExpanded ? 'Show Less' : 'Show More'}}</b></span>
+        </button>
+    </div>
+</div>
+<div #vxPlayerContainer id="kpoint-reels"></div>
+
+
+
+

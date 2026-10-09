@@ -1,0 +1,13 @@
+<div>
+    <div class="top-title">
+        <h2>{{dialogdata.title}}</h2>
+        <img src="https://bflcodepush.bajajfinserv.in/bflfiles/assets/img/crossiocon.svg" alt=""
+            (click)="closeDialog(dialogdata.selectedValue)">
+    </div>
+    <ul class="list-Container">
+        <li *ngFor="let item of dialogdata.dropDownList" (click)="closeDialog(item['dropdown-values'])"
+            [ngClass]="{'select': item['dropdown-values'] === dialogdata.selectedValue}">
+            {{ item['dropdown-values'] }}
+        </li>
+    </ul>
+</div>

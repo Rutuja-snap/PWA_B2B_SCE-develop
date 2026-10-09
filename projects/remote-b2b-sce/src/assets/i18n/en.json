@@ -1,0 +1,71 @@
+{
+    "b2b_sce": {
+        "continue": "CONTINUE",
+        "aa_offer_details": {
+            "title": "Offer details",
+            "description": "Your current available offers are listed below.",
+            "eligible_loan_offers": "Your eligible loan offer(s)",
+            "higher_cibil": "Having a higher CIBIL Score helps you get better terms on your loan.",
+            "upgrade_offer": "upgrade offer"
+        },
+        "aa_pdp": {
+            "textDesc": "Experience the simplicity of getting a loan with our new feature. With Account Aggregator, you can securely share your financial details from different places, but only with your permission. This helps us understand your needs better and provide you with loans faster. Enjoy a seamless, hassle-free loan process with Bajaj Finance. Your data, your control, your loan."
+        },
+        "b2b_experian_popup": {
+            "faster": "Faster",
+            "fullNameErrMsg": "Please enter your full name",
+            "selectOptionErrMsg": "Please select an option to continue"
+        },
+        "b2b_sce_toolbar": {
+            "offerDetails": "Offer details",
+            "accountAggregator": "Check Eligibility"
+        },
+        "b2b_text_ratings": {
+            "title": "Account Aggregator",
+            "subtitle": "Hassle-free eligibility check | 3-step process | Exclusive loan offers."
+        },
+        "b2b_xfaq": {
+            "faq": "Frequently asked questions"
+        },
+        "offer_card": {
+            "up_to": "Up to ",
+            "price_desc": "₹12,00,000",
+            "on_new_car_finance": "on New Car Finance",
+            "explore": "Explore",
+            "more_details": "More details",
+            "rate_of_interesting": "Rate of interest starting at 10%",
+            "hide_details": "Hide details",
+            "view_details": "View details"
+        },
+        "personal_details": {
+            "selectEmpErrMsg": "Please select your employment type",
+            "multipleErrMsg": "There are multiple errors on this screen",
+            "t&cErrMsg": "Please accept our terms and conditions to proceed",
+            "singleErrMsg": "There is an error on this screen",
+            "personal_details_form_errors": {
+                "fullNameReqErrMsg": "Please enter your full name",
+                "fullNamePatternErrMsg": "Full name is invalid. Please enter the correct Full name and continue.",
+                "dobReqErrMsg": "Please enter your date of birth",
+                "dobInvalidErrMsg": "Please enter a valid Date of birth",
+                "dobPatternErrMsg": "Please enter date of birth in the format DD/MM/YYYY",
+                "dobNotEligibleErrMsg": "Your age must be at least 18 years to apply for the loan",
+                "panReqErrMsg": "Please Enter your PAN card number",
+                "panPatternErrMsg": "Please valid PAN card number."
+            }
+        },
+        "stepper": {
+            "title": "Steps to check loan eligibility",
+            "description": "Verify your income to revise your loan offer",
+            "numData1": "1",
+            "title1": "Select your bank account",
+            "description1": "",
+            "numData2": "2",
+            "title2": "Verify your bank account",
+            "description2": "",
+            "numData3": "3",
+            "title3": "Share consent for banking details",
+            "description3": ""
+        }
+    }
+   
+}

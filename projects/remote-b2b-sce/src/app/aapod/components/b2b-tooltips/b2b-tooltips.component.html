@@ -1,0 +1,25 @@
+<div *ngIf="displayPopupDataObj?.type == 'infoIconData'" class="document_required_popup" id="leaving_supportive">
+    <div class="modal-body">
+        <div class="Tool_main_card">
+            <div class="cross_img">
+                <img (click)="gotIt_Clicked('First Name','CLose')"
+                    src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/lasv1/cross.svg" alt="">
+            </div>
+            <div class="tool_wrap">
+                <div class="tool_Title">
+                    <h3>{{displayPopupDataObj.fname}}</h3>
+                    <h4 class="Tool_Msg_">
+                        {{displayPopupDataObj.desc}}
+                    </h4>
+                </div>
+
+                <div *ngIf="displayPopupDataObj?.type == 'infoIconData'" class="tool_IMG toolIMG">
+                    <img [src]="displayPopupDataObj.img" alt="">
+                </div>
+                <div class="got_it_btn"><a (click)="gotIt_Clicked('First Name',displayPopupDataObj.cta)">{{displayPopupDataObj.cta}}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

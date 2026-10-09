@@ -1,0 +1,144 @@
+name: 📋 Generate & Deploy Release Notes
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to generate notes from'
+        required: true
+        default: 'develop'
+      environment:
+        description: 'Environment the release notes are for (e.g. uat, prod, cug)'
+        required: true
+        default: 'uat'
+      dep_type:
+         description: 'Select the Software application for build'
+         required: true
+         default: 'app'
+      app_version:
+         required: false
+         default: '13.3.0'
+
+jobs:
+  generate-and-deploy:
+    name: Generate Release Notes & Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.branch }}
+      - run: |
+          echo "Branch selected: ${{ github.event.inputs.branch }}"
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests --quiet
+
+      - name: 🎨 Generate HTML Release Notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT}}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+          OUTPUT_DIR: ./release-temp
+        run: |
+          python .github/scripts/release_notes-html.py
+
+      - name: 📋 Show Generated Reports
+        run: |
+          echo "=== REPORTS GENERATED ==="
+          ls -lh ./release-temp/
+
+      - name: 📦 Upload Release Notes Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes
+          path: release-temp/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: 🌐 Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT}}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+          DEP_TYPE: ${{ github.event.inputs.dep_type }}
+          APP_VERSION: ${{ github.event.inputs.app_version }}
+        run: |
+          echo "📄 Deploying release notes to GitHub Pages..."
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p gh-pages-temp
+          cd gh-pages-temp
+
+          # Clone gh-pages branch
+          echo "📥 Fetching gh-pages branch..."
+          git clone --depth=1 --branch=gh-pages \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" . 2>&1 || {
+              echo "Creating new gh-pages branch (first time)..."
+              git init
+              git checkout -b gh-pages
+          }
+
+          # Conditional release notes path
+          if [ "${DEP_TYPE}" = "app" ]; then
+            NOTES_DIR="notes/${ENVIRONMENT}/${APP_VERSION}"
+          else
+            NOTES_DIR="notes/${ENVIRONMENT}"
+          fi
+
+          mkdir -p "${NOTES_DIR}"
+
+          # Always use the same file name
+          cp ../release-temp/RELEASE_NOTES.html "${NOTES_DIR}/RELEASE_NOTES.html"
+          echo "✅ Release notes (HTML) copied for $ENVIRONMENT ($NOTES_DIR/RELEASE_NOTES.html)"
+
+          # Commit and push
+          git add "${NOTES_DIR}/RELEASE_NOTES.html"
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes to deploy"
+          else
+            git commit -m "docs: Update release notes for $ENVIRONMENT and $DEP_TYPE - $(date +'%Y-%m-%d %H:%M:%S IST')"
+            echo "📤 Pushing to gh-pages branch..."
+            git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+            echo "✅ Deployed successfully!"
+          fi
+
+          echo "RELEASE_NOTES_URL_PATH=${NOTES_DIR}/RELEASE_NOTES.html" >> $GITHUB_ENV
+
+          cd ..
+
+      - name: 📊 Deployment Summary
+        if: success()
+        env:
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
+          DEP_TYPE: ${{ github.event.inputs.dep_type }}
+          APP_VERSION: ${{ github.event.inputs.app_version }}
+          RELEASE_NOTES_URL_PATH: ${{ env.RELEASE_NOTES_URL_PATH }}
+        run: |
+          echo "## 🌐 Release Notes Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Reports Generated:" >> $GITHUB_STEP_SUMMARY
+          echo "- 📋 **HTML Report:** RELEASE_NOTES.html ($ENVIRONMENT)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🌐 Access Your Release Notes:" >> $GITHUB_STEP_SUMMARY
+          echo "**View at:** https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${RELEASE_NOTES_URL_PATH}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Generated:** $(date '+%Y-%m-%d %H:%M:%S IST')" >> $GITHUB_STEP_SUMMARY
+
+          rm -rf gh-pages-temp

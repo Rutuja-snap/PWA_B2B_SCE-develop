@@ -1,0 +1,16 @@
+<!-- Watch our Videos -->
+<div class="watch_videos_main">
+    <h4 class="approved_heading" *ngIf="this.MODE == 'LIST'">{{this.render.title}}</h4>
+    <div class="image_slider {{this.MODE == 'VIDEO' ? 'filtered_view' : ''}}">
+        <div class="watch_videos"  *ngFor="let v of this.render.videos;let i = index">
+            <div class="video_wrap">
+                <img *ngIf="v.thumbnail" [src]="v.thumbnail" />
+                <button class="play_button" (click)="openVideo(v)">
+                    <img src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/pdpx/play.svg" alt="">
+                </button>
+            </div>
+            <p *ngIf="this.MODE == 'LIST'" [innerHtml]="v.description"></p>
+        </div>
+    </div>
+</div>
+<div #vxPlayerContainer id="kpoint-reels"></div>

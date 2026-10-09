@@ -1,0 +1,126 @@
+.aa_det_what_next {
+    background-color: #FFFFFF;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h4 {
+        font-family: 'Rubik-Medium';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #000000;
+
+        span {
+            font-family: 'Rubik-Medium';
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.59px;
+            text-align: left;
+            color: #FF6700;
+            white-space: nowrap;
+        }
+    }
+
+    .aa_det_vertical_tracker {
+        display: flex;
+        flex-direction: column;
+
+        .aa_det_data_point {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            position: relative;
+            gap: 10px;
+
+            .aa_det_circle_badge {
+                width: 21px;
+                height: 21px;
+                border-radius: 25px;
+                background: var(--blue-blue-light-d-1-e-2-fb, #D1E2FB);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 9px;
+                margin-top: 6px;
+
+                .aa_det_numDatafont {
+                    color: var(--blue-blue-dark-1056-aa, #1056AA);
+                    text-align: center;
+                    font-family: 'Rubik-Medium';
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .aa_det_circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #2680eb;
+            /* margin-right: 5px; */
+            position: relative;
+            padding: 14px;
+            z-index: 10000;
+        }
+
+        .aa_det_circle p {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+        }
+
+        .aa_det_dot {
+            position: absolute;
+            left: 10px;
+            top: 26px;
+            height: 100%;
+            width: 1px;
+            // z-index: 10;
+            transform: rotate(180deg);
+            border-left: 2px dotted #8ab7ed;
+        }
+
+        .aa_det_data_lines {
+            display: flex;
+            flex-direction: column;
+
+            .aa_det_title {
+                font-family: 'Rubik-Medium';
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 17px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #000000;
+            }
+
+            .aa_det_desc {
+                font-family: 'Rubik-Regular';
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #1a1a1a;
+            }
+
+            .aa_det_data_line {
+                margin-top: 2px;
+            }
+
+            // .gl_det_seeClick {
+            //     font-family: 'Rubik-Medium';
+            //     color: #FF6700;
+            // }
+        }
+    }
+}

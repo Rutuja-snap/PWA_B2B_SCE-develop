@@ -1,0 +1,13 @@
+<div class="xaop_det_what_next">
+    <h4>{{this.render.title}}</h4>
+    <div class="xaop_det_vertical_tracker">
+        <div class="xaop_det_data_point" *ngFor="let lines of this.render.data; let i = index">
+            <div class="xaop_det_circle_badge"><span class="xaop_det_numDatafont">{{lines.numData}}</span></div>
+            <div class="xaop_det_dot" *ngIf="i !== this.render.data.length - 1"></div>
+            <div class="xaop_det_data_lines">
+                <div class="xaop_det_data_line xaop_det_title">{{lines.title}}</div>
+                <div class="xaop_det_data_line xaop_det_desc">{{lines.description}}</div>
+            </div>
+        </div>
+    </div>
+</div>

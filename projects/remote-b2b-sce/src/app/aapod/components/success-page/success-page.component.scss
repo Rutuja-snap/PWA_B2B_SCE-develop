@@ -1,0 +1,67 @@
+.aa_white_background {
+    background-color: #fff;
+    margin-bottom: 2px;
+}
+
+.aa_desktop_width {
+    max-width: 570px;
+}
+
+.aa_padding_common {
+    padding: 16px 16px;
+}
+
+.aa_screen_center {
+    display: flex;
+    align-items: center;
+    // margin-bottom: 40px;
+}
+
+.aa_viewport {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.aa_success_screen_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.aa_success_screen_image {
+    display: flex;
+    justify-content: center;
+
+    .aa_success_screen_image_section {
+       width: 324px;
+        height: 235px;
+    }
+}
+
+.aa_success_screen_content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+
+    .aa_success_screen_content_heading {
+        font-family: Rubik;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+        color: #1A1A1A;
+    }
+
+    .aa_success_screen_content_desc {
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: var(--neutrals-gray-grey-40666666, #666666);
+    }
+}

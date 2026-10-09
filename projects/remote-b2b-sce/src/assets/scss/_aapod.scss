@@ -1,0 +1,706 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './_ng15.scss';
+@import './_xaop.scss';
+
+.aa_margin_main {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.aa_toolbar {
+    display: flex;
+    height: 64px;
+    padding: 0px 20px;
+    justify-content: center;
+    align-items: center;
+    background: #002953;
+}
+
+.aa_toolbar_logo {
+    display: flex;
+    padding-right: 20px;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.aa_toolbar_logo_icon {
+    width: 81.209px;
+    height: 32px;
+}
+
+.aa_toolbar_header {
+    display: flex;
+    height: 22px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.aa_toolbar_header_back {
+    width: 11.667px;
+    height: 21px;
+}
+
+.aa_toolbar_header_text {
+    color: var(--neutrals-white-ffffff, #FFF);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Sub-Heading/SH_18_Medium_24_1.3 */
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 133.333% */
+    width: -webkit-fill-available;
+}
+
+.aa_personalize_offer_icons_wrapper {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.aa_personalize_offer_icons {
+    display: flex;
+    padding: 8px 4px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.aa_personalize_offer_icons_text {
+    color: var(--Typography-Black-90, var(--neutrals-black-1-a-1-a-1-a, #1A1A1A));
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    width: 86px;
+}
+
+
+// few steps to follow
+
+.aa_few_steps_wrapper {
+    display: flex;
+    padding: var(--Gutter_Horizontal, 12px) 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    background: var(--neutrals-white-ffffff, #FFF);
+}
+
+.aa_few_steps_wrapper_header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    align-self: stretch;
+}
+
+.aa_few_steps_wrapper_header_text {
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.aa_few_steps_wrapper_bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    position: relative;
+    z-index: 1;
+}
+
+.aa_few_steps_wrapper_bottom_line {
+    position: absolute;
+    left: 10px;
+    top: 16px;
+    width: 0px;
+    height: 80%;
+    border: 1px dashed #8AB7ED;
+    z-index: -1;
+}
+
+.aa_few_steps_wrapper_bottom_step {
+    display: flex;
+    width: 335px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+}
+
+.aa_few_steps_wrapper_bottom_step_icon {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    fill: var(--Blue-Blue, #2680EB);
+}
+
+.aa_few_steps_wrapper_bottom_step_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    align-self: stretch;
+    color: var(--bw-black, #000);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex: 1 0 0;
+}
+
+.aa_few_steps_wrapper_bottom_step_line {
+    width: 1px;
+    height: 110px;
+    position: absolute;
+    left: 11.5px;
+    top: 17px;
+    background: #8AB7ED;
+}
+
+
+// employment and consent
+
+.aa-not-found-snack-bar {
+    justify-content: center;
+    font-size: 12px;
+    background-image: linear-gradient(to right, #f10000, rgb(129, 0, 0));
+}
+
+.aa_emptype_box_selection_tile_text {
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #000;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.aa_emptype_box_selection_error {
+    display: flex;
+    width: 343px;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.aa_emptype_box_selection_error_text {
+    color: var(--Red-Red, var(--utility-red-b-40000, #B40000));
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Desktop/Regular/Rubik Reg 12 */
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+
+// consent fail 
+
+.input-form {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    background: #FAFAFA;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+      display: none; // Chrome, Safari
+    }
+    .aa_emptype_wrapper {
+      height: auto;
+    //   margin: auto;
+    }
+}
+
+.consent-form {
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+// aa otp pop up
+.aa_login_popup_wrap {
+    display: flex;
+    // max-width: 375px;
+    padding: 0px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px 10px 0px 0px;
+    background: var(--bw-white, #FFF);
+}
+
+.aa_login_popup_cross {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.aa_login_popup_title {
+    align-self: stretch;
+    color: var(--Typography-Black-90, var(--neutrals-black-1-a-1-a-1-a, #1A1A1A));
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.aa_login_popup_description {
+    align-self: stretch;
+    color: var(--bw-black, #000);
+    text-align: center;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+
+.aa_login_popup_mobno {
+    display: flex;
+    padding: var(--Gutter_Horizontal, 12px) var(--Gutter_Horizontal, 12px) 24px var(--Gutter_Horizontal, 12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    background: #F7F6F6;
+
+
+}
+
+.aa_login_popup_mobno_top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.aa_login_popup_mobno_top_title {
+    color: var(--neutrals-black-1-a-1-a-1-a, #1A1A1A);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body-Text/BT_14_Medium_18_1.3 */
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 128.571% */
+}
+
+.aa_login_popup_mobno_field {
+    display: flex;
+    padding: var(--Gutter_Horizontal, 12px);
+    align-items: center;
+    gap: 4px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    border: 1px solid var(--neutrals-gray-grey-60999999, #999);
+    background: var(--neutrals-white-ffffff, #FFF);
+}
+
+.aa_login_popup_mobno_hint {
+    flex: 1 0 0;
+    color: var(--neutrals-gray-grey-40666666, #666);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body-Text/BT_12_Regular_16_1.3 */
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    /* 133.333% */
+}
+
+.aa_login_popup_mobno_bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.aa_login_popup_mobno_bottom_btn {
+    display: flex;
+    min-width: 167px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 200px;
+    background: var(--gradients-tangerine-gradient-ff-6700-ff-8900, linear-gradient(90deg, #FF6700 0%, #FF8900 100%));
+    color: var(--neutrals-white-ffffff, #FFF);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* Body-Text/BT_14_Medium_18_1.3 */
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 128.571% */
+
+}
+
+.aa_login_popup_mobno_bottom_tnc {
+    width: 270px;
+    color: var(--bw-black, #000);
+    text-align: center;
+    font-family: Rubik;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.133px;
+}
+
+.aa_login_popup_mobno_bottom_tnc_red {
+    color: var(--Tangerine-Tangerine, #FF6700);
+    font-family: Rubik;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.133px;
+}
+
+.aa_custom_dialog_class {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+// aa verify otp popup
+.aa_otp-heading {
+    margin: 15px 0px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* Typography/Black 90 */
+
+    color: #1A1A1A;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.aa_otp-subtext {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.16px;
+
+    /* Grey/Grey 60 */
+
+    color: #666666;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+
+.aa_otp-div {
+    display: flex;
+
+}
+
+.aa_submit-btn {
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 8px 11px;
+    height: 40px;
+    min-width: 300px;
+    background: linear-gradient(169.61deg, #FF6700 35.6%, #FF8900 183.52%);
+    border-radius: 23px;
+    border: none;
+    font-size: 14px;
+}
+
+.aa_submit-btn:disabled {
+    opacity: 0.3;
+}
+
+.aa_resend-otp {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-align: right;
+
+    /* Tangerine/Tangerine */
+
+    color: #FF6700;
+    border: none;
+    background: transparent;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.aa_resend-otp:disabled {
+    opacity: 0.3;
+}
+
+.aa_otp-error {
+    font-family: 'Rubik';
+    font-style: normal;
+    color: #FF6700;
+
+}
+
+.aa_input_cross_hide {
+    display: none;
+}
+
+.aa_input_cross_show {
+    display: block;
+}
+
+.aa_btm_sheet_container {
+    overflow: visible !important;
+}
+
+.aa_mat_dialog_container mat-dialog-container {
+    padding: 0 !important;
+}
+
+.droparrow {
+    background: url(https://bflcodepush.bajajfinserv.in/bflfiles/assets/img/prof_black-down-arrow.svg) no-repeat 0 0;
+    background-size: 100% 100%;
+    width: 16px;
+    height: 16px;
+    top: 15px;
+    position: absolute;
+    // right: 15px;
+    right: 4px;
+}
+
+.list-Container::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+.list-Container::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+.list-Container::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 4px;
+    /* Add border radius */
+}
+
+#aa_container_for_confetti canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.aa_confetti_backdrop_class {
+    background: rgb(0 0 0 / 77%);
+}
+
+.aa_transparent_bg_for_confetti {
+    width: 800px;
+
+    mat-dialog-container {
+        background: transparent;
+        box-shadow: none;
+        padding: 0px;
+        display: inline-table;
+
+        .mdc-dialog__container .mat-mdc-dialog-surface {
+            background-color: unset;
+            box-shadow: none;
+            overflow: hidden;
+        }
+    }
+
+    app-aa-confetti-dialog {
+        position: relative;
+        // right: 30px;  // commented because of not coming in center issue in a16
+    }
+}
+
+sup.aa_sup_text {
+    font-size: 18px !important;
+    font-family: 'Rubik-Bold' !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+}
+
+
+// for mobile only 
+@media only screen and (max-width: 767px) {
+    .aa_consent_wrap {
+        // margin-bottom: 94px;
+    }
+
+    .aa_toolbar_logo {
+        display: none;
+    }
+
+    .aa_margin_b_mob {
+        margin-bottom: 70px;
+    }
+}
+
+// for desktop -- write at bottom always
+
+@media only screen and (min-width: 768px) {
+    .aa_mobile_proceed_btn_fixed {
+        position: unset;
+        box-shadow: none;
+    }
+
+    .aa_emptype_wrapper{
+        height: max-content;
+    }
+
+    .aa_continue_btn_desktop {
+        width: 200px;
+    }
+
+    .aa_toolbar {
+        padding: 0px 60px;
+    }
+
+    .aa_consent_fail_wrap {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+
+    .aa_max_desktop_width {
+        margin-left: 140px;
+    }
+
+    .aa_pdp {
+        .mob_view {
+            display: none;
+        }
+
+        .card_container {
+            display: block;
+
+            .feature_card {
+                max-width: 172px;
+            }
+        }
+
+        .watch_videos_main .image_slider {
+            .watch_videos {
+                width: unset !important;
+            }
+        }
+    }
+
+    .aa_desktop_padding {
+        padding: 0px 24px;
+        background: #FFF;
+    }
+
+    .aa_transparent_bg_for_confetti {
+        overflow: hidden;
+
+        mat-dialog-container .mat-mdc-dialog-surface {
+            overflow: hidden;
+        }
+
+        app-aa-confetti-dialog {
+            overflow: hidden;
+        }
+    }
+
+    .aa_income_fail_wrap{
+        flex-direction: row !important;
+        justify-content: center !important;
+
+        .aa_income_fail_red_box {
+            width: 539px;
+        }
+    }
+}
+
+.aa_margin_main {
+    hr {
+        color: #E5EAF7;
+        margin: 0px !important;
+        height: 2px !important;
+        background-color: #E5EAF7;
+        opacity: 1;
+    }
+
+    hr.hr_grey {
+        color: #CCCCCC;
+        margin: 0px !important;
+        height: 1px !important;
+        background-color: #CCCCCC;
+        opacity: 1;
+    }
+
+}

@@ -1,0 +1,365 @@
+.mdc-text-field {
+  padding: 0;
+}
+ 
+.mat-mdc-select-arrow svg {
+  display: none;
+}
+ 
+.mat-mdc-select {
+  margin: 5px 0 0;
+}
+ 
+.mat-mdc-button.cdk-program-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-button.cdk-keyboard-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-outlined-button.cdk-program-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-outlined-button.cdk-keyboard-focused .mat-mdc-button-persistent-ripple:before {
+  display: none;
+}
+ 
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+ 
+.mat-mdc-form-field-subscript-wrapper {
+  font-size: 0.8rem;
+}
+ 
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+ 
+.mat-mdc-button.cdk-program-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-button.cdk-keyboard-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-outlined-button.cdk-program-focused .mat-mdc-button-persistent-ripple:before,
+.mat-mdc-outlined-button.cdk-keyboard-focused .mat-mdc-button-persistent-ripple:before {
+  opacity: 0;
+}
+ 
+.mat-mdc-form-field.ng-valid .mdc-line-ripple:before {
+  border-bottom-color: #1ea330 !important;
+}
+ 
+.mat-mdc-form-field.ng-valid .mdc-text-field--filled .mdc-line-ripple:after {
+  border-bottom-color: #1ea330 !important;
+}
+ 
+.mat-mdc-form-field.mat-form-field-appearance-fill .mat-mdc-form-field-flex {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 1.5px solid #ffffff !important;
+}
+ 
+.mat-mdc-form-field-icon-prefix,
+.mat-mdc-form-field-icon-suffix {
+  line-height: normal !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+ 
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-focus-overlay {
+  opacity: 0;
+}
+ 
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  padding: 0;
+}
+ 
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  height: 44px;
+  padding: 0;
+}
+ 
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  top: 28px;
+}
+ 
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label.mdc-floating-label--float-above {
+  top: 20px;
+}
+ 
+.mat-mdc-form-field .mat-mdc-form-field-hint-wrapper {
+  padding: 0;
+}
+ 
+.mat-mdc-form-field .mat-mdc-form-field-infix {
+  height: 44px ;
+  min-height: 44px;
+  padding: 0px 0 0 !important;
+}
+ 
+.mat-mdc-form-field-error-wrapper {
+  padding: 0;
+}
+ 
+.mat-mdc-form-field .mat-mdc-input-element {
+  height: 100% !important;
+}
+ 
+.mat-mdc-form-field-infix {
+  min-height: 44px;
+}
+ 
+.mat-form-field-appearance-fill .mat-mdc-form-field-flex {
+  padding: 0 !important;
+}
+ 
+.mat-mdc-form-field-required-marker {
+  display: none;
+}
+ 
+.mdc-floating-label {
+  width: 100%;
+}
+
+.mat-mdc-checkbox.mat-accent .mdc-checkbox--selected~.mdc-checkbox__ripple {
+  display: none;
+}
+ 
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate="true"]:enabled~.mdc-checkbox__background {
+  background: #ff6700 !important;
+  border-color: #ff6700 !important;
+}
+ 
+.mdc-radio__inner-circle {
+  border: none !important;
+}
+
+.mat-mdc-radio-button {
+  &.mat-accent {
+    .mdc-radio__inner-circle {
+      background-color: #ff6700;
+      border-color: #ff6700 !important;
+    }
+  }
+ 
+  &.mat-mdc-radio-checked {
+    .mdc-radio__background {
+      &::before {
+        display: none;
+      }
+    }
+  }
+ 
+  .mdc-radio__outer-circle {
+    border-color: rgba(153, 153, 153, 1) !important;
+  }
+}
+ 
+.mat-mdc-form-field-hint-wrapper,
+.mat-mdc-form-field-error-wrapper {
+  padding: 0px !important;
+}
+
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+ 
+.mdc-snackbar__label {
+  padding: 0 !important;
+}
+ 
+.mat-mdc-snack-bar-actions {
+  margin: -8px -8px -8px 8px !important;
+}
+ 
+.mat-mdc-snack-bar-handset,
+.mat-mdc-snack-bar-container,
+.mat-mdc-snack-bar-label {
+  flex: initial !important;
+}
+
+.mat-mdc-form-field {
+  line-height: 1.125 !important;
+}
+ 
+.mdc-text-field {
+  overflow: visible !important;
+  padding: 0px !important;
+}
+
+.mat-mdc-select-arrow {
+  background: url(https://bflcodepush.bajajfinserv.in/bflfiles/assets/img/dropdown.png) no-repeat 0 0;
+  background-size: 100% auto;
+  border: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 12px !important;
+  top: 5px !important;
+}
+ 
+.mat-mdc-form-field-input-control.mat-mdc-form-field-input-control {
+  font-family: Rubik-Medium, sans-serif ;
+}
+ 
+.mat-mdc-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,
+.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before {
+  background-color: transparent !important;
+}
+ 
+.mat-mdc-dialog-container {
+  .mdc-dialog__surface{
+    padding: 12px 16px;
+  }
+}
+ 
+.mat-toolbar-row{
+  padding: 0px;
+}
+.mat-mdc-icon-button{
+  &.mat-mdc-button-base{
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0px !important;
+  }
+}
+
+.mat-mdc-text-field-wrapper {
+  .mat-mdc-form-field-infix {
+    .mat-mdc-floating-label{
+      color: #666 !important;
+      font-size: 1.4rem !important;
+      font-family: 'Rubik-Regular',sans-serif;
+    }
+  }
+}
+ 
+.mat-mdc-option {
+  .mat-pseudo-checkbox-minimal{
+    display: none;
+  }
+}
+ 
+.mat-mdc-radio-button .mdc-radio .mdc-radio__background:before {
+  background-color: transparent !important;
+  top: 0px !important;
+  left: 0px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  padding: 0px;
+}
+ 
+.mat-mdc-form-field-error{
+  line-height: 14px;
+  text-indent: -2px;
+}
+.mat-mdc-button, .mat-mdc-outlined-button {
+  --mat-mdc-button-persistent-ripple-color: #ff6700;
+  --mat-mdc-button-ripple-color: rgba(255, 103, 0, .1);
+}
+ 
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab{
+  padding: 0px 14px !important;
+  min-width: auto;
+  height: auto;
+}
+ 
+
+.mat-mdc-checkbox .mdc-checkbox__ripple {
+  opacity: 0 !important;
+}
+ 
+.mdc-button{
+  &.component-tab-button-active{
+    color:#fff !important
+  }
+}
+ 
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+
+// postload css
+
+.mat-bottom-sheet-container {
+    max-height: 95vh !important;
+    font: 10px/normal 'Rubik-Regular', sans-serif;
+    border-radius: 10px 10px 0 0;
+    padding: 20px !important;
+    will-change: transform;
+  }
+  .mat-expansion-panel-body{
+    padding: 0 10px 16px !important;
+}
+
+.mat-mdc-form-field,
+.mat-mdc-checkbox,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-tab-label,
+.mat-mdc-tab-link,
+.mat-mdc-tab-group {
+    font-family: var(--font-family-regular);
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+* {
+    outline: none !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+a:focus {
+    outline: none !important;
+}
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    font-size: 1.4rem;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+img {
+    max-width: 100%;
+}
+.mat-mdc-option,
+.mat-mdc-form-field-label,
+.mat-mdc-radio-button,
+.mat-mdc-form-field,
+.mat-mdc-select {
+    font-family: var(--font-family-regular) !important;
+}
+.mdc-checkbox-indeterminate.mat-accent .mdc-checkbox__background,
+.mdc-checkbox-checked.mat-accent .mdc-checkbox__background {
+    background-color: #ff6700;
+}
+.mat-mdc-checkbox-checked:not(.mat-mdc-checkbox-disabled).mat-accent .mat-ripple-element,
+.mdc-checkbox:active:not(.mdc-checkbox-disabled).mat-accent .mat-ripple-element {
+    background-color: #ff6700;
+}
+.mat-mdc-button[disabled], :disabled {
+    opacity: 0.3;
+}
+
+
+.mat-bottom-sheet-container,
+.mat-mdc-bottom-sheet-container {
+  position: static !important;
+}

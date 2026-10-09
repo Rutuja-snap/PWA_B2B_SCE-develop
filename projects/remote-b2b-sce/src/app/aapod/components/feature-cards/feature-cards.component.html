@@ -1,0 +1,25 @@
+<div *ngIf="this.render" class="features_and_benfits">
+    <div class="feature_headers">
+        <h2 [innerHtml]="this.render.title"></h2>
+    </div>
+    <div *ngIf="this.render.cards" class="card_container">
+        <div class="feature_card" *ngFor="let card of this.render.cards" (click)="toggleCard(card)"
+            [ngStyle]="{'background': card.__flipped ? '#FFF5DA' : '#ffffff', 'transform': card.__flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'}">
+            <!-- (click)="toggleCard(card)"    click to be added in class -> feature_card (for single flip) & remove toggleAllCards() -->
+            <div class="flipper">
+                <div class="front">
+                    <div class="c_img_parent">
+                        <img *ngIf="card.icon" [src]="card.icon?.link" alt="">
+                    </div>
+                    <div class="c_data">
+                        <h4 class="c_title" [innerHTML]="card.title"></h4>
+                        <span class="c_span" [innerHTML]="card.subtitle"></span>
+                    </div>
+                </div>
+                <div class="back">
+                    <p class="c_desc" [innerHTML]="card.description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

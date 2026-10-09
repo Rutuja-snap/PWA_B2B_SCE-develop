@@ -1,0 +1,12 @@
+<div class="aa_toolbar">
+    <div class="aa_toolbar_logo"><img class="aa_toolbar_logo_icon" src="https://bflcodepush.bajajfinserv.in/bflfiles/assets/img/Bajaj_Finance_Logo_Digit_Reverse.svg"></div>
+    <div class="aa_toolbar_header">
+        <img *ngIf="showBack()" class="aa_toolbar_header_back" (click)="onBack()" src="https://ip-dynbanners.bajajfinserv.in/3in1Mobile/assets/images/left_arrow.svg">
+        <div class="aa_toolbar_header_text">{{getToolBarTitle() | translate}}</div>
+    </div>
+    <div class="aa_cross_img"  *ngIf="showCrossIcon()" (click)="onRedirect()">
+        <svg width="16" height="16" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.33652 0.232776C1.88793 -0.108629 1.2449 -0.0744884 0.835205 0.335198C0.388265 0.782128 0.388265 1.50675 0.835205 1.95368L4.88161 6L0.835205 10.0463L0.732781 10.1635C0.391369 10.6121 0.42551 11.2551 0.835205 11.6648C1.28215 12.1117 2.00678 12.1117 2.45372 11.6648L6.50013 7.61848L10.5463 11.6645L10.6635 11.767C11.1121 12.1084 11.7551 12.0742 12.1648 11.6645C12.6117 11.2176 12.6117 10.493 12.1648 10.0461L8.11864 6L12.1648 1.95393L12.2672 1.83673C12.6086 1.38816 12.5745 0.745136 12.1648 0.33545C11.7179 -0.111481 10.9932 -0.111481 10.5463 0.335449L6.50013 4.38152L2.45372 0.335198L2.33652 0.232776Z" fill="white"/>
+        </svg>
+    </div>
+</div>
